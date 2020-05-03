@@ -30,7 +30,26 @@ p a[0].to_i
 
 p a[0].to_i + a[1].to_i
 
+
+
+
+
+
+
+最後の問題
+
 input line = gets.chomp!.split("").map(&:to_i)
+
+arr = input_line.map do |num|
+	if num == 0
+		num = "C"
+	elsif num == "A"
+	else
+		num = "B"
+	end
+end
+puts arr.join
+
 
 
 
