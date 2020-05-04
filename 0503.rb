@@ -1,3 +1,4 @@
+# 一問目
 line = readlines.map(&:chomp)
 p line
 
@@ -21,7 +22,7 @@ lines = line.map(&:to_i)
 p lines.max
 p lines.min
 
-
+# 2問目
 
 input_line = gets.chomp!.split("").map(&:to_s)
 
@@ -73,8 +74,48 @@ input_line.map do |one|
   else
       arr.push(one)
   end
-  
+
 end
 
 
 puts arr.join
+
+
+
+
+
+３問目
+問題見て分からないときは例を見よう
+
+a = gets.split(' ')
+b = gets.to_i
+
+if a[0].to_i >= b
+    puts a[0].to_i + a[1].to_i
+else
+    puts a[0].to_i
+end
+
+
+input_line = gets.s;lit(" ").map(&:to_i)
+
+feeAndPoint = readlines.map(&:champ)
+
+feeAndPoints = feeAndPoint.map(&:to_i)
+
+remaining = input_line[0]
+
+point = 0
+
+feeAndPoints.each do |fee|
+    if point >= fee
+        point -= fee
+    else
+        point += fee * 0.1
+        remaining = remaining - fee
+    end
+
+    puts "#{remaining} #{point.to_i}"
+end
+
+
