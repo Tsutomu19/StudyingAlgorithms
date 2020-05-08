@@ -89,3 +89,11 @@ lines.size.times do |i|
     puts "noisy"
   end
 end
+
+
+n = gets.to_i
+
+p gets.chomp!.split(' ').map(&:to_i).inject(:+)
+
+untilは何かを加算していくときに使う
+    
