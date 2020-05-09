@@ -102,3 +102,153 @@ input_line.map do |one|
 
 end
 puts arr.join
+
+
+
+
+# C013
+
+
+n = gets.to_i
+m = gets.to_i
+
+rooms = []
+until rooms.size == m
+    rooms << gets.chomp.split(' ').map(&:to_i)
+end
+
+rooms.size.times do |i|
+    i = gets.split('')
+    if i == n  nがあったら
+        p rooms　　
+    else
+        p　
+    end
+end
+
+
+
+
+# 工事の初期値
+kouji = gets.chomp!.split(' ').map(&:to_i)
+
+# 木陰の数
+n = gets.to_i
+
+# 木陰のxとy
+lines = []
+
+# 木陰のxとyの配列数が木陰の数と同じになるまでloop
+until lines.size == n
+    lines << gets.chomp.split(' ').map(&:to_i)
+end
+
+# 木陰のxとyの回数分ループを繰り返し、silentかnoisyか判定する
+lines.size.times do |i|
+  if (lines[i][0] - kouji[0]) ** 2 + (lines[i][1] - kouji[1]) ** 2 >= kouji[2] ** 2
+    puts "silent"
+  else
+    puts "noisy"
+  end
+end
+
+
+
+分かりやす！！
+22:25 けんご dislike_number = gets.chomp
+rooms = gets.to_i
+# 1..roomsの結果を配列に入れ、配列の中からrejectで判定がtrueのものを削除←ここが特に勉強になりました。
+room_no = (1..rooms).map{ gets.chomp }.reject{ |room| room.include?(dislike_number) }
+
+# 空の場合[]が返ってくる
+if room_no.size >= 1
+  puts room_no
+else
+  puts "none"
+end
+
+
+
+
+
+
+22:32 けんご dislike_number = gets.chomp
+rooms = gets.to_i
+# 1..roomsの結果を配列に入れ、配列の中からrejectで判定がtrueのものを削除
+room_no = (1..rooms).map{ gets.chomp }.reject{ |room| room.include?(dislike_number) }
+
+# 空の場合[]が返ってくる
+puts room_no.size >= 1 ? room_no : "none"
+
+# C072
+
+
+lines = []
+while line = gets
+    lines << line.chomp.split(' ')
+end
+p lines
+
+
+
+
+自分の解答
+abi = gets.split(' ').map(&:to_i)
+n = gets.to_i
+
+name, atk, defe, spe = [],[],[],[]
+count.times { lists << gets.chomp! }
+
+
+
+
+
+
+
+
+
+# c071
+
+
+hen = gets.split(' ').map(&:to_i)
+
+
+hen = gets.chomp.split(" ").map(&:to_i)
+m = hen[0]
+n = hen[1]
+
+teihen = (1..m).map{gets.chomp.split(" ").map(&:to_i)}
+takasa = (1..n).map{gets.chomp.split(" ").map(&:to_i)}
+
+kumi = 
+
+mまでの数で           　nまでの数で
+斜辺も整数になる三角形の個数をだす　ものを描きたい
+**2 = 
+
+
+
+00:02 けんご 
+
+construction = gets.chomp.split(" ").map(&:to_i)
+# 木陰の数
+shades = gets.to_i
+# 各要素の座標を配列に格納して数値化
+coordinates = (1..shades).map{gets.chomp.split(" ").map(&:to_i)}
+# それぞれの座標で判定
+coordinates.each do |coord_x,coord_y|
+  if (coord_x - construction[0]) ** 2 + (coord_y - construction[1]) ** 2 >= construction[2] ** 2
+    puts "silent"
+  else
+    puts "noisy"
+  end
+end
+
+
+
+解答
+num = gets.split("").map(&:to_i)
+m = num[0]
+n = num[1]
+
+bottom = (1..m-1).to_a

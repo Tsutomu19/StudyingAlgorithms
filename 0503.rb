@@ -97,7 +97,7 @@ else
 end
 
 
-input_line = gets.s;lit(" ").map(&:to_i)
+input_line = gets.split(" ").map(&:to_i)
 
 feeAndPoint = readlines.map(&:champ)
 
@@ -117,5 +117,6 @@ feeAndPoints.each do |fee|
 
     puts "#{remaining} #{point.to_i}"
 end
+
 
 
