@@ -149,3 +149,6 @@ carrots.each_with_index do |data, i|
     
 end
 i番目のcarrotsはdateです。
+
+n = readlines.map(&:to_i)
+p n[0]**2 - n[1]
