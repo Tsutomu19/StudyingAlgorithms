@@ -110,7 +110,7 @@ def word_match(official,myanswer)
     m_official = official.split("")
     m_answer = myanswer.split("")
     zure = 0
-    
+
     # m_official.sizeの回数だけ処理を繰り返している。
     m_official.size.times do |i|
         unless m_official[i] == m_answer[i]
@@ -171,3 +171,81 @@ input = gets.chomp
 
 answers = (1..number).map{gets.chomp}.select{|answer| answer.include?(input)}
 puts answers.any?
+
+# c37
+# 23:40 けんご
+ time = gets.chomp.to_s.split("")
+
+# 時間の計算 / 24で割り切れれば 日にち、 % 24の余が時間 divmod[0]→商 / divmod[1]→余
+ div = (time[6].to_i * 10 + time[7].to_i).divmod(24)
+
+
+ month = time[0]+time[1]
+ date = ((time[3].to_i * 10 + time[4].to_i) + div[0]).to_s.rjust(2,"0")
+#  0を右に入れる
+ hours = div[1].to_s.rjust(2,"0")
+ mins = time[9]+time[10]
+
+puts "#{month}/#{date} #{hours}:#{mins}"
+
+
+
+
+
+
+
+
+# C077:【30万人記念問題】レポートの評価
+# あなたはパイザ大学の教授です。学生に課したレポートを評価するため、あなたは自動でレポートの評価をするプログラムを考えることにしました。
+
+# 今回あなたが出題したレポートには n 問の問題があり、1 問あたりの配点はそれぞれ 100 / n 点です。ここで n は 100 の約数です。
+
+# あなたはレポートに提出期限を設けていました。提出期限から遅れたレポートのうち、遅れた日数が 9 日以下のレポートは得点を 8 割にすることにしました。このとき得点に小数点以下が発生した場合切り捨てます。10 日以上遅れたレポートの評価は 0 点とすることにしました。
+# 図1
+
+# レポートの点数が 80 点以上の場合、そのレポートの評価は A となります。70 点以上 79 点以下の場合 B となります。60 点以上 69 点以下の場合 C となります。59 点以下の場合は D となります。
+
+# 図2
+
+# あなたは k 人分のレポートの評価をしようと思っています。i 番目の学生 (1 ≦ i ≦ k) はレポートを期限の日を基準に d_i 日後に提出し、n 問中 a_i 問に正解しました。
+# ただし、d_i < 0 のときは、レポートを期限の日を基準に -d_i 日前に提出したということを表します。また、d_i = 0 のときは、レポートを期限の日に出したと解釈し、レポートの点数が 8 割にされることはありません。
+# このときの学生のレポートの評価を出力するプログラムを作成しましょう。
+
+input = gets.split(' ').map(&:to_i)
+student = input[0]
+question = input[1]
+
+
+
+23:30 堀越 優希 data = gets.split(" ").map(&:to_i)
+student_count = data[0]
+question_count = data[1]
+student_data = (1..student_count).map{gets.chomp!.split(" ").map(&:to_i)}
+@single_point = 100 / question_count
+
+def calc(delay,collect)
+  score = collect * @single_point
+  if delay >= 1 && delay <= 9 
+      score *= 0.8
+      score = score.floor
+      elsif delay >= 10
+      score = 0
+  end
+
+  if score >= 0 && score <= 59 
+      "D"
+      elsif score >= 60 && score <= 69
+      "C"
+      elsif score >= 70 && score <= 79
+      "B"
+      elsif score >= 80 && score <=100
+      "A"
+  end
+end
+
+student_data.each do |delay, correct|
+    puts calc(delay,correct)
+end
+23:31 竹田 つとむ 喋ってもらえますか！
+
+
