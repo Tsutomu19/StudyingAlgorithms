@@ -176,4 +176,61 @@ when 4
   end
 end
 
-# D104:送料の計算
+# D092
+
+
+
+
+
+
+
+
+
+lines = []
+while line = gets
+    lines << line.chomp.split(' ').map(&:to_i)
+end
+x1 = lines[0][0]
+y1 = lines[0][1]
+price1 = lines[0][2]
+
+x2 = lines[1][0]
+y2 = lines[1][1]
+price2 = lines[1][2]
+
+
+if price1 / (x1 * y1) < price2 / (x2 * y2)
+        p lines[0]
+    elsif price1 / x1 * y1 > price2 / x2 * y2
+        p lines[1]
+
+    elsif iprice1 / x1 * y1 == price2 / x2 * y2
+        p "DRAW"
+end
+
+lines = []
+while line = gets
+    lines << line.chomp.split(' ').map(&:to_i)
+end
+x1 = lines[0][0]
+y1 = lines[0][1]
+price1 = lines[0][2]
+
+x2 = lines[1][0]
+y2 = lines[1][1]
+price2 = lines[1][2]
+
+
+# 循環小数理解
+p price2 / (x2 * y2)
+if price1 / (x1 * y1) < price2 / (x2 * y2)
+        puts lines[0].join(" ")
+    elsif price1 / (x1 * y1) > price2 / (x2 * y2)
+        puts lines[1].join(" ")
+
+
+
+        
+    elsif price1 / (x1 * y1) == price2 / (x2 * y2)
+        p "DRAW"
+end
