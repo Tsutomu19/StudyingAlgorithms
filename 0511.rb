@@ -70,7 +70,7 @@ end
 foods.each_with_index do |food,i|
   if food == "melon"
     foods.slice!(i+1,10)
-    # 配列から指定された要素を返します。指定の要素を切り取るイメージです
+    # 配列から指定された要素をsliceしている。指定の要素を切り取るイメージ
   end
 end
 p foods.count("melon")

@@ -26,6 +26,7 @@ def calc(delay,collect)
 end
 
 student_data.each do |delay, correct|
+  # 一つ一つに以下の処理
     puts calc(delay,correct)
 end
 
@@ -176,6 +177,8 @@ when 4
   end
 end
 
+# indexメソッドとは、最初から何番目にあるかを整数で返すメソッドのこと。
+# 一つの値に対して解（例えばxなど。複数の候補の中で一致するものを）を探すような場合にはcase文をしようすると便利
 # D092
 
 
@@ -221,13 +224,18 @@ y2 = lines[1][1]
 price2 = lines[1][2]
 
 
-# 循環小数理解
-p price2 / (x2 * y2)
 if price1 / (x1 * y1) < price2 / (x2 * y2)
-        puts lines[0].join(" ")
-    elsif price1 / (x1 * y1) > price2 / (x2 * y2)
-        puts lines[1].join(" ")
-
-    elsif price1 / (x1 * y1) == price2 / (x2 * y2)
-        p "DRAW"
+  puts lines[0].join(" ")
+elsif price1 / (x1 * y1) > price2 / (x2 * y2)
+  puts lines[1].join(" ")
+  
+elsif price1 / (x1 * y1) == price2 / (x2 * y2)
+  p "DRAW"
 end
+
+# 浮動小数点の理解について
+# 一言で言えば、浮動小数点というのは一般の人が想像するような小数ではなく、計算で誤差が発生することを前提とした数値データのことです。
+# 逆に言えば、浮動小数点を使う時は常に近似計算であることを意識し、結果の精度を考えろということでもあります。
+# to_fは浮動小数点に変換
+
+# 循環小数（じゅんかんしょうすう、recurring decimal, repeating decimal）とは、ある桁から先で同じ数字の列が無限に繰り返される小数のことである。繰り返される数字の列を循環節という
