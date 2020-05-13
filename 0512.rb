@@ -228,9 +228,6 @@ if price1 / (x1 * y1) < price2 / (x2 * y2)
     elsif price1 / (x1 * y1) > price2 / (x2 * y2)
         puts lines[1].join(" ")
 
-
-
-        
     elsif price1 / (x1 * y1) == price2 / (x2 * y2)
         p "DRAW"
 end
