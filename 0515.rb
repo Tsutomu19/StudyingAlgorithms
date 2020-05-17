@@ -4,7 +4,7 @@
 # C015:ポイントカードの計算
 # D113:初日の出　復習
 
-
+# 入力されたデータの取得方法を取得
 
 
 
@@ -104,13 +104,19 @@ p (price / a)* b - (price / a)*a
 
 
 # C030:白にするか黒にするか
+# 3 2
+# 128 127
+# 127 128
+# 128 127
 
 
 
 
 data = gets.chomp!.split(" ").map(&:to_i)
+# [3, 2]
 row = data[0]
 line = data[1]
+# [128, 127]
 
 wb_data = gets.chomp!.split(" ").map(&:to_i)
 
@@ -125,16 +131,6 @@ line_data.each do |f|
 end
 
 
-
-
-input = gets.chomp.split(" ").map(&:to_i)
-# [3, 2]
-row = input[0]
-line = input[1]
- wb_data = ()
-
-
-
  # kengo
 def white_or_black(size)
     if size < 128
@@ -143,17 +139,188 @@ def white_or_black(size)
       return 1
     end
   end
-  
+
   input_line = gets.chomp.split(" ").map(&:to_i)
-  
+
   line = (1..input_line[0]).map{ gets.chomp.split(" ").map(&:to_i)}
-  
+
   input_line[0].times do |height|
     input_line[1].times do |width|
       line[height][width] = white_or_black(line[height][width])
     end
   end
-  
+#   配列をそれぞれ数値として出力
   line.each do |l|
     puts l.join(" ")
   end
+
+# 写経
+#   def white_or_black(size)
+#     if size < 128
+#         return 0
+#     elsif size >= 128
+#         return 1
+#     end
+#   end
+
+#   input_line = gets.chomp.split(" ").map(&:to_i)
+
+#   line = (1..input_line[0]).map{ gets.chomp.split(" ").map(&:to_i)}
+#   input_line[0].times do |height|
+#     input_line[1].times do |weidth|
+#         line[heigth][width] = white_or_black(line[heigth][width])
+#     end
+#   end
+
+#   line.each do |ans|
+#     puts ans.join(" ")
+#   end
+
+
+
+
+# C051:カード並べ
+# 自分のかい
+line = gets.split(' ').map(&:to_i)
+a = line[0]
+b = line[1]
+c = line[2]
+d = line[3]
+answer = []
+
+answer << (a * 10 + b) + (c * 10 + d)
+answer << (a * 10 + b) + (d * 10 + c)
+answer << (a * 10 + c) + (b * 10 + d)
+answer << (a * 10 + c) + (d * 10 + b)
+
+answer << (a * 10 + b) + (c * 10 + d)
+answer << (a * 10 + b) + (d * 10 + c)
+answer << (a * 10 + c) + (b * 10 + d)
+answer << (a * 10 + c) + (d * 10 + b)
+
+answer << (a * 10 + b) + (c * 10 + d)
+answer << (a * 10 + b) + (d * 10 + c)
+answer << (a * 10 + c) + (b * 10 + d)
+answer << (a * 10 + c) + (d * 10 + b)
+
+
+
+p answer.max
+
+
+
+# yukiさん
+data = gets.split(" ").map(&:to_i).permutation(4).to_a
+arr = []
+data.each do |one,two,three,four|
+    arr << "#{one}""#{two}".to_i + "#{three}""#{four}".to_i
+end
+p arr.max
+
+
+
+
+# C:022
+# 5
+# 11 14 16 10
+# 12 15 17 10
+# 13 11 14 11
+# 12 10 13 8
+# 11 13 14 10
+number = gets.to_i
+data = (1..number).map{gets.chomp.split(" ").map(&:to_i)}
+p data[0][0]
+
+
+
+
+
+# けんごさん
+
+days = gets.to_i
+data =  (1..days).map{ gets.chomp.split(" ").map(&:to_i) }
+puts "#{data[0][0]} #{data[-1][1]} #{data.flatten.max} #{data.flatten.min}"
+
+
+
+days = gets.to_i
+data =  (1..days).map{ gets.chomp.split(" ").map(&:to_i) }
+
+max_array = []
+min_array = []
+
+data.each do |d|
+  max_array.push(d[2])
+  min_array.push(d[3])
+end
+
+puts "#{data[0][0]} #{data[-1][1]} #{max_array.max} #{min_array.min}"
+
+
+
+
+days = gets.to_i
+data =  (1..days).map{ gets.chomp.split(" ").map(&:to_i) }
+
+max = data[0][1]
+min = data[0][2]
+
+data.each do |d|
+  if max < data[2]
+    max = data[2]
+  end
+
+  if min > data[3]
+    min = data[3]
+  end
+end
+
+puts "#{data[0][0]} #{data[-1][1]} #{max} #{min}"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# C041:メダルランキングの作成 23:30
+
+
+
+
+country = gets.to_i
+medal = (1..country).map{gets.chomp.split(" ").map(&:to_i)}
+
+gold = []
+silver = []
+bronze = []
+
+medal.each do |g|
+    gold.push(g[0])
+end
+p gold.sort.reverse
+
+
+
+
+
+
+
+# ゆうきさん
+arr = (1..gets.to_i).map{gets.split(" ").map(&:to_i)}.sort{|x,y| y[2] <=> x[2]}.sort{|x,y| y[1] <=> x[1]}.sort{|x,y| y[1] <=> x[1]}.sort{|x,y| y[0] <=> x[0]}.each {|x| puts x.join(' ')}
+
+
+# けんごさん
+countries = gets.to_i
+medals = (1..countries).map{ gets.chomp.split(" ").map(&:to_i)}.sort_by!{|x| [x[0],x[1],x[2]]}.reverse!.each{|gold,silver,bronze| puts "#{gold} #{silver} #{bronze}" }
