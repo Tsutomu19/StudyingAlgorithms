@@ -64,7 +64,8 @@ data.each do |d|
 end
 
 puts "#{data[0][0]} #{data[-1][1]} #{max_array.max} #{min_array.min}"
-days = gets.to_idata = (1..days).map{( gets.chomp.split(" ").map(&:to_i)}
+days = gets.to_i
+data = (1..days).map{( gets.chomp.split(" ").map(&:to_i)}
 puts "#{data[0][0]} #{data[-1][1]}　#{data.flatten.max} #{data.flatten.min}"
 # 配列の最後を-1でとってるるんだ。すご。感動。これならnこでも対応できるじゃん。
 # flatten。。。配列内配列をフラット化して、その中からmax,minを取り出してきている。
@@ -238,3 +239,5 @@ end
 
 # [PARAM] other:
 # self を割る数。
+
+
