@@ -172,50 +172,6 @@ puts one[-1] != "n" && two[-1] != "n" && one[-1] == two[0] ? "OK" : "NG"
 
 
 
-N = (1..gets.to_i).to_a
-N.each |nn|
-    if nn % 15 == 0
-        puts 'Fizz Buzz'
-    elsif nn % 3 == 0
-        puts 'Fizz'
-    elsif nn % 5 == 0
-        puts 'Buzz'
-    else
-        puts nn
-    end
-end
-
-
-
-
-
-N = (1..gets.to_i).to_a
-N.each do |nn|
-    if nn % 15 == 0
-        puts 'Fizz Buzz'
-    elsif nn % 3 == 0
-        puts 'Fizz'
-    elsif nn % 5 == 0
-        puts 'Buzz'
-    else
-        puts nn
-    end
-end
-
-
-
-N = (1..gets.to_i).to_a
-.each do |n|
-    if n % 15 == 0
-        puts 'Fizz Buzz'
-    elsif n % 3 == 0
-        puts 'Fizz'
-    elsif n % 5 == 0
-        puts 'Buzz'
-    else
-        puts n
-    end
-end
 
 
 
@@ -243,4 +199,20 @@ N.each do |nn|
     else
         puts nn
     end
+
+    
+    
+    N = (1..gets.to_i).to_a
+    .each do |n|
+        if n % 15 == 0
+            puts 'Fizz Buzz'
+        elsif n % 3 == 0
+            puts 'Fizz'
+        elsif n % 5 == 0
+            puts 'Buzz'
+        else
+            puts n
+        end
+    end
+
 end
