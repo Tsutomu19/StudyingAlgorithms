@@ -197,12 +197,44 @@ p answer.first
 
 
 
+C063:ガーデニング
+・続く N 行のうちの i 行目 (1 ≦ i ≦ N) には
+i 番目の花の種が花を咲かせるまでの日数を表す整数 a_i、
+i 番目の花の種を庭にまく日を表す整数 b_i がこの順で半角スペース区切りで与えられます。
+a_i + 1 日後に枯れてしまいます。
 
 
-input = gets.split(" ").map(&:to_i)
-h,w = input[0].abs,input[1].abs
+4
+1 3
+2 2
+1 1
+1 2
 
-move = gets.split(" ").map(&:to_i)
-dy,dx = move[0].abs,move[1].abs
 
-p (dx * h) + (dy * w) - (dx * dy)
+
+flowers_count = gets.to_i
+
+flowers = (1..flowers_count).map{gets.split(" ").map(&:to_i)}.sort{|a,b| a[1] <=> b[1]}
+# ライフと巻く日
+# ライフを繰り返しごとに-1する？0になったら消す的な
+
+kadan = []
+for i in 0..flowers_count - 1 do
+   p "#{i}" + "日目"
+   kadan << flowers[i]
+   if i >= 1
+       kadan.each do |life,day|
+          life -= 1
+          p kadan
+       end
+   end
+end
+
+p kadan
+
+
+
+
+
+
+
