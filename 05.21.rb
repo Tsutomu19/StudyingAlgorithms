@@ -122,3 +122,132 @@ end
 p count
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+C070
+
+・1 行目に、ポーカーの手札の個数を表す整数 N が与えられます。
+・続く N 行のうちの i 行目 (1 ≦ i ≦ N) には、i 番目の手札の情報を表す 4 個の数字からなる文字列が与えられます
+。i 行目の文字列 s_i の j 番目 (1 ≦ j ≦ 4) の文字 s_{i, j} は、i 番目の手札の j 番目のカードに書かれた数字が s_{i, j} であるということを表します。
+
+
+8
+7777
+2229
+5566
+2669
+1689
+1333
+1189
+3588
+配列の中の配列の要素で、4枚中何枚同じ数があるか
+
+cards = (1..gets.to_i).map{gets.chomp}.map(&:to_i)
+answer = []
+
+cards.each do |n|
+    answer << n..split("").uniq
+    if answer.count == 4
+        puts "Four Card"
+    elsif answer.count == 3
+        puts "Three Card"
+    elsif answer.count == 2
+        puts "Two Card"
+    elsif answer.count == 1
+        puts "One Card"
+    elsif answer.count == 0
+        puts "No Pair"
+    end
+end
+
+
+
+# yuki
+cards = (1..gets.to_i).map{gets.chomp}.map(&:to_i)
+answer = []
+
+cards.each do |n|
+    answer << n.split("").uniq
+    if answer.count == 4
+        puts "Four Card"
+    elsif answer.count == 3
+        puts "Three Card"
+    elsif answer.count == 2
+        puts "Two Card"
+    elsif answer.count == 1
+        puts "One Card"
+    elsif answer.count == 0
+        puts "No Pair"
+    end
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+C076:給与の計算
+・1 行目には、通常の時給 X、夜の時給 Y、深夜の時給 Z 
+がこの順に整数で半角スペース区切りで与えられます。
+・2 行目には、出勤日数 N が整数で与えられます。
+・続く N 行の i 番目 (1 ≦ i ≦ N) には
+、i 日目の出勤時刻 S_i と退勤時刻 T_i がこの順に整数で半角スペース区切りで与えられます。
+・入力は合計で N + 2 行となり、入力値最終行の末尾に改行が 1 つ入ります。
+
+1000 1300 1500
+4
+0 9
+9 17
+17 22
+22 23
+・N 日間の給料の合計金額を整数で出力してください。
+
+
+input = gets.split(" ").map(&:to_i)
+x,y,z = input[0],input[1],input[2]
+day = gets.to_i
+answer = 0
+(1..day).map{gets.split(" ").map(&:to_i)}
+.each do |s,f|
+    if s >= 9 && f <= 17
+       answer = (f - s) * x
+    elsif s >= 17 && f <= 22
+        answer = answer + (f - s) * y
+    else
+        answer = answer + (f - s)%24.abs * z
+    end
+end
+p answer
