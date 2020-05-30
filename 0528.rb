@@ -139,3 +139,6 @@ x.each do |i|
     end
 end
 puts x
+
+
+
