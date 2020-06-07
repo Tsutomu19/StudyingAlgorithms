@@ -109,3 +109,39 @@ total_data.each do |start,goal|
 end
 
 puts light_woods.join(" ")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+AtCoder
+
+C - gacha 
+
+くじ引きを 
+N
+ 回行い、
+i
+ 回目には種類が文字列 
+S
+i
+ で表される景品を手に入れました。
+
+何種類の景品を手に入れましたか？
+
+num = gets.to_i
+ary = (1..num).map{gets.chomp}.map(&:to_i)
+p ary.uniq.count
+
+
