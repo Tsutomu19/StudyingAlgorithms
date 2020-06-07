@@ -11,4 +11,4 @@ arr = []
 (holiday-2).times do |d,i|
     arr << data[i..i+2]
 end
-p arr
+
