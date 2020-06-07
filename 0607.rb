@@ -145,3 +145,56 @@ ary = (1..num).map{gets.chomp}.map(&:to_i)
 p ary.uniq.count
 
 
+
+C006:ハイスコアランキング
+4 10 3
+1.5 1.2 2 0.4
+208 200 3 99988
+255 150 50 65472
+103 748 39 48571
+159 403 32 89928
+254 300 67 78492
+249 298 47 45637
+253 382 89 37282
+250 350 78 76782
+251 371 69 67821
+256 312 89 54382
+
+input = gets.split(" ").map(&:to_i).round(1)
+parameter_num = input[0]
+user = input[1]
+top_number = input[2]
+
+p ci = gets.split(" ").map(&:to_i)
+
+p user_xi = (1..user).map{gets.split(" ").map(&:to_i)}
+
+
+user_xi.each do |u|
+    (u * ci).sum
+end
+# ユーザーのスコアは、各アイテム持ち数×各アイテムの得点の総和となります。
+
+
+
+
+
+
+
+
+
+# yuki
+data = gets.split(" ").map(&:to_i)
+item_count = data[0]
+data_count = data[1]
+rank_count = data[2]
+
+item_array = gets.split(" ").map(&:to_f)
+play_array = (1..data_count).map{gets.chomp.split(" ").map(&:to_i)}
+rank_array = []
+
+play_array.each do |arr|
+   rank_array << item_array.zip(arr).map{|m,n| m*n}.sum
+end
+
+puts rank_array.sort.reverse![0..2].map{|a| a.round}
