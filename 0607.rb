@@ -198,3 +198,4 @@ play_array.each do |arr|
 end
 
 puts rank_array.sort.reverse![0..2].map{|a| a.round}
+
