@@ -86,3 +86,19 @@ Stirng#each_charと同じように動作します。
 
 
 D077:計算機の表示
+その計算機は最大で4桁までしか表示できず 9,999 より大きな数字は表示が出来ず "NG" と表示されます。
+2つの正の整数 a, b が入力されるので、a と bを掛け算した時 9,999 以下であれば掛け算した結果を出力し、10,000 以上の場合は "NG" と出力するプログラムを作成してください。
+
+
+
+input = gets.split(" ").map(&:to_i)
+a,b = input[0], input[1]
+result = a * b
+result <= 9999 ? p result : puts "NG"
+
+if result <= 9999
+    p result
+else
+    puts "NG"
+end
+
