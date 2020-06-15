@@ -157,3 +157,40 @@ puts best_in.join(" ")
 D157:信号の組み合わせ
 n = gets.to_i
 p 2**n
+
+
+
+
+
+D086:門松の作成
+最も短い竹の長さが与えられるので、長さは 3 : 5 : 7 の 3 本の竹に切断し門松を作るために必要な 1 本の竹の長さを出力してください。
+small = gets.to_i
+mid = (5 * small).to_f / 3 
+lon = (7 * small).to_f / 3
+p small + mid + lon 
+
+3:5 = small : m 
+3:7 = small : l
+
+
+small = gets.to_i
+mid = small * ( 5 / 3.to_f )
+long = small * ( 7 / 3.to_f )
+p (small + mid + long).ceil
+
+
+
+
+
+
+
+
+
+あー。これでいいんだ。どうすれば楽そうか。を考えた時に閃いた。
+3:15 = 60 : 300
+1: 5
+
+
+small = gets.to_i
+p small * 5
+
