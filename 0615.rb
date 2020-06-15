@@ -102,3 +102,11 @@ else
     puts "NG"
 end
 
+
+
+D060:AボタンとBボタン
+
+
+botan = gets.split(" ").map(&:to_i)
+a,b = botan[0],botan[1]
+p a - b
