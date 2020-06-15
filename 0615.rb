@@ -81,3 +81,8 @@ puts "#{sunny_day}" + " " + "#{d_count-sunny_day}"
 "hello世界".chars # => ["h", "e", "l", "l", "o", "世", "界"]
 Stirng#each_charと同じように動作します。
 文字をバラバラ、ばらばら
+
+
+
+
+D077:計算機の表示
