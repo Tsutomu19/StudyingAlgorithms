@@ -149,3 +149,11 @@ best_in.concat(moji)
 puts best_in.join(" ")
 
 
+1143
+
+
+
+
+D157:信号の組み合わせ
+n = gets.to_i
+p 2**n
