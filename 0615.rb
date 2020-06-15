@@ -110,3 +110,42 @@ D060:AボタンとBボタン
 botan = gets.split(" ").map(&:to_i)
 a,b = botan[0],botan[1]
 p a - b
+
+
+D055:ワインのキャッチコピー
+
+
+moji = gets.split(" ")
+array = ["Best","in"]
+p array
+
+
+
+moji = gets.split(" ")
+# ["a", "decade"]
+best_in = ["Best","in"]
+best_in << moji[0]
+best_in << moji[1]
+p best_in.join(" ")
+# p array.join(" ")
+
+ary_a.concat(ary_b)
+
+
+
+
+moji = gets.split(" ")
+best_in = ["Best","in"]
+best_in.concat(moji)
+p best_in.join(" ")
+# "Best in a decade"
+
+
+# putsにする
+
+moji = gets.split(" ")
+best_in = ["Best","in"]
+best_in.concat(moji)
+puts best_in.join(" ")
+
+
