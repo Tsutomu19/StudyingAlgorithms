@@ -104,3 +104,10 @@ cup = gets.to_i
 puts juice / cup
 
 1204
+
+
+
+D111:文字を切り詰める
+i = gets.to_i
+string = gets.split("")
+puts string[0..i-1].join("")
