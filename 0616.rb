@@ -128,3 +128,29 @@ else
 end
 
 1230
+
+
+D096:含んではいけない文字
+これらの文字がいずれか1つ以上含まれる場合
+
+string = gets.split("")
+if string.include?(I,l,i)
+    puts "caution"
+end
+
+
+
+
+string = gets.chomp.split("")
+
+if ["I","i","l"].any? {|s| string.include?(s)}
+    puts "caution"
+else
+    puts string.join("")
+end
+# include?複数ある時の書き方！！
+
+
+1268
+
+
