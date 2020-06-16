@@ -164,13 +164,16 @@ p 2**n
 
 D086:門松の作成
 最も短い竹の長さが与えられるので、長さは 3 : 5 : 7 の 3 本の竹に切断し門松を作るために必要な 1 本の竹の長さを出力してください。
+3:5 = small : m 
+3:7 = small : l
+
+
+
 small = gets.to_i
 mid = (5 * small).to_f / 3 
 lon = (7 * small).to_f / 3
 p small + mid + lon 
 
-3:5 = small : m 
-3:7 = small : l
 
 
 small = gets.to_i
@@ -188,9 +191,92 @@ p (small + mid + long).ceil
 
 あー。これでいいんだ。どうすれば楽そうか。を考えた時に閃いた。
 3:15 = 60 : 300
-1: 5
+1:5
 
 
 small = gets.to_i
 p small * 5
 
+
+
+
+B021:複数形への変換 
+
+3
+dog
+cat
+pig
+
+
+英単語 a_i を複数形に変換した答えを i 行目に出力してください。
+
+"string".end_with?("ing")          # => true
+"string".end_with?("str")          # => false
+"string".end_with?("str", "ing")   # => true
+
+・末尾が s, sh, ch, o, x のいずれかである英単語の末尾に es を付ける
+・末尾が f, fe のいずれかである英単語の末尾の f, fe を除き、末尾に ves を付ける
+・末尾の1文字が y で、末尾から2文字目が a, i, u, e, o のいずれでもない英単語の末尾の y を除き、末尾に ies を付ける
+・上のいずれの条件にも当てはまらない英単語の末尾には s を付ける
+
+
+
+# ["dog", "cat", "pig"]
+
+num = gets.to_i
+words = (1..num).map{gets.chomp}
+words.each do |w|
+    if w.end_with?("s","sh","ch","o","x")
+        puts "w"+"es"
+    elsif w.end_with?("f")
+        puts "w.tr("f",ves")
+    elsif w.end_with?("fe")
+        
+    end
+end
+
+
+f.end_with?("f")
+puts f.chop + "ves"
+
+
+・末尾の1文字が y で、末尾から2文字目が a, i, u, e, o のいずれでもない英単語の末尾の y を除き、末尾に ies を付ける
+
+num = gets.to_i
+words = (1..num).map{gets.chomp}
+words.each do |w|
+    if w.end_with?("s","sh","ch","o","x")
+        puts w + "es"
+    elsif w.end_with?("f")
+        w.chop!
+        puts w.chop + "ves"
+    elsif w.end_with?("fe")
+        w.chop!.chop!
+        puts w.chop + "ves"
+    elsif w.end_with?("y") && ! w[-2].include?("a","i","u","e","o")
+        puts w.chop + "ies"
+    else
+        puts w + "s"
+    end
+end
+
+
+
+
+num = gets.to_i
+words = (1..num).map{gets.chomp}
+words.each do |w|
+    if w.end_with?("s","sh","ch","o","x")
+        puts w + "es"
+    elsif w.end_with?("fe")
+        w.chop!.chop!
+        puts w.chop + "ves"
+    elsif w.end_with?("f")
+        w.chop!
+        puts w.chop + "ves"
+    elsif w.end_with?("y") && ! [w[-2]].any? {|i| ["a","i","u","e","o"].include?(i)}
+        puts w.chop + "ies"
+    else
+        puts w + "s"
+    end
+end
