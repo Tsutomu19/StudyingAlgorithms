@@ -111,3 +111,20 @@ D111:文字を切り詰める
 i = gets.to_i
 string = gets.split("")
 puts string[0..i-1].join("")
+
+
+
+D158:【2020年七夕問題】湿度の確認
+
+
+situdo = gets.to_i
+40 <= situdo && situdo <=60 ? puts "OK" :  puts "NG"
+
+
+if  40 <= situdo && situdo <=60  
+    puts "OK"
+else 
+    puts "NG"
+end
+
+1230
