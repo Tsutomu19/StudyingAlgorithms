@@ -154,3 +154,56 @@ end
 1268
 
 
+
+
+D139:少ない方の勝ち　
+最も同じ手の人が少なかった手を出した人をひとまず勝者とすることにしました。ただしこのじゃんけんでは、
+グーおよびパーしか出すことができません。
+勝った人はどちらの手を出していたか求めるプログラムを作成してください。
+
+ただし、どちらの手も出している人の数が同じ場合は引き分けとなります。
+
+
+total_num = gets.to_i
+p (1..total_num).map{gets.split(" ")}
+
+
+
+total_num = gets.to_i
+janken = gets.split(" ")
+G,P = 0,0
+.each do |j|
+    if j =="G"
+        G += 1
+    else
+        p += 1
+    end
+end
+if G > total_num - G
+    puts "P"
+elsif G < total_num - G
+    puts "G"
+else
+    puts "Draw"
+end
+
+
+total_num = gets.to_i
+janken = gets.split(" ")
+G,P = 0,0
+janken.each do |j|
+    if j =="G"
+        G += 1
+    else
+        P += 1
+    end
+end
+if G > total_num - G
+    puts "P"
+elsif G < total_num - G
+    puts "G"
+else
+    puts "Draw"
+end
+
+1304
