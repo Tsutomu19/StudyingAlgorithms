@@ -10,3 +10,26 @@ elsif a == b
 else
     p b
 end
+
+
+paizaレーティング
+1181
+
+
+
+
+D134:タイトルの長さ
+
+文字列 S が与えられるので 10 文字ごとに改行して出力してください。
+
+moji = gets.split("")
+i = moji.count
+if i <= 9
+    puts moji[0..i].join("")
+else
+    puts moji[0..9].join("")
+    puts moji[10..i].join("")
+end
+
+paizaレーティング
+1216
