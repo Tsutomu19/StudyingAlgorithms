@@ -64,3 +64,37 @@ else
     puts "OK"
 end
 
+
+string = gets.chomp.split("")
+moji = string[0]
+unless string.include?(moji)
+    
+end
+
+
+
+
+if string.size - count["A"] == 0 
+    puts "NG"
+else
+    puts "OK"
+end
+
+
+要素が全て同じ
+全ての値が同一
+重複が一つ
+
+
+
+string = gets.chomp.split("")
+string.uniq.count == 1 ? puts "NG" : puts "OK"
+
+
+
+string = gets.chomp.split("")
+if string.uniq.count == 1 
+    puts "NG" 
+else 
+    puts "OK"
+end
