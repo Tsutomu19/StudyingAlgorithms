@@ -135,3 +135,12 @@ need = day.divmod(box)
 need[1] == 0 ? (p need[0]) : (p need[0] + 1)
 
 # ()が必要なようだ
+
+
+
+
+
+D112:工場の生産力
+
+product,hour = gets.to_i,gets.to_i
+p product * hour
