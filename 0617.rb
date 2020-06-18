@@ -144,3 +144,60 @@ D112:工場の生産力
 
 product,hour = gets.to_i,gets.to_i
 p product * hour
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+D062:ひな祭り
+
+
+
+
+num = gets.split(" ").map(&:to_i)
+upper,middle,lower = num[0],num[1],num[2]
+dolls = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"]
+puts dolls[0..upper - 1].join("")
+puts dolls[upper..middle ].join("")
+puts dolls[middle..lower - 1].join("")
+# 一応通るけど
+
+
+
+
+# 地続きのやつこれ使おう
+row = gets.split(" ").map(&:to_i)
+ningyou = ("A".."J").to_a
+row.size.times {|i| puts ningyou.shift(row[i]).join }
+
+
+
+
+
+
+
+
+
+puts 40 <= gets.to_i && gets.to_i <=60 ? "OK" : "NG"
+
+
+# 範囲があるときはこれ
+puts gets.to_i.between?(40,60) ? "OK":"NG"
+
+
+
+
+
+
+
+
