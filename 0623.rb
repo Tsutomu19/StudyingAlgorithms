@@ -131,7 +131,7 @@ p answer
 #     p a
 # end
 # =>true
-一分けなくてもいいことがわかった。
+# 一分けなくてもいいことがわかった。
 
 
 
@@ -166,7 +166,7 @@ puts answer.nil? "none" : answer
 
 
 
-
+# 9
 kirai = gets.chomp
 hospital_room = gets.to_i
 
@@ -179,6 +179,10 @@ hospital = (1..hospital_room).map{gets.chomp}
 end
 
 puts answer.empty? ? "none" : answer
+
+
+
+
 
 
 
