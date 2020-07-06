@@ -7,3 +7,4 @@ end
 
 data_array.sort
 puts (arr - data_array)
+
